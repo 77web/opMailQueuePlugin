@@ -1,0 +1,11 @@
+options:
+  charset: utf8
+ 
+MailQueue:
+  columns:
+    id: { type: integer(11), notnull: true, primary: true, autoincrement: true }
+    mailto: string(255)
+    subject: string(255)
+    body: string(51200)
+    encoding: string(20)
+    queued_at: datetime
