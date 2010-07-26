@@ -1,6 +1,11 @@
 <?php
 /**
+ * PluginDiaryTable
+ *
+ * @package    opMailQueuePlugin
+ * @author     Hiromi Hishida <info@77-web.com>
  */
+
 class PluginMailQueueTable extends Doctrine_Table
 {
   public function getSpool()
