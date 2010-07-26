@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>opMailQueuePlugin</name>
+ <channel>plugins.openpne.jp</channel>
+ <summary>大量メール配信をキューで処理</summary>
+ <description>OpenPNEからのメール配信をキュー（DB）に入れ、後からcron設定されたタスクで処理するプラグインです。
+
+実際のメール送信処理でキューに入れるためにはコアの
+lib/util/sfOpenPNEMailSend.class.php　～3.4.x？
+または
+lib/util/opMailSend.class.php 3.6.x～？
+に一部変更が必要です。
+作者不勉強につきプラグインからコアのファイルを上書きする方法がわからないので、もし実際に使っていただける際は当分の間下記のパッチをlib/util/opMailSend.class.phpを上書きする形で入れて使ってください。
+http://github.com/77web/OpenPNE3/raw/c61c2f98d99529e278b426dc21697a72e20e18f5/lib/util/opMailSend.class.php
+ </description>
+ <lead>
+  <name>hissy</name>
+  <user>77web</user>
+  <email />
+  <active>yes</active>
+ </lead>
+ <date>2010-07-26</date>
+ <time>16:27:59</time>
+ <version>
+  <release>0.9.0</release>
+  <api>0.9.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>PHP</license>
+ <notes>beta version</notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="bf3d7b33bde453e24a660088f4f3d2c7" name="config/app.yml" role="data" />
+   <file baseinstalldir="/" md5sum="253e02dfbb542ac5837b65f279fb4a9f" name="config/doctrine/schema.yml" role="data" />
+   <file baseinstalldir="/" md5sum="24e85c7cb18bd08883001bbce4168023" name="lib/filter/doctrine/PluginMailQueueFormFilter.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="878f01f692786eae6e4da69d359eb87f" name="lib/form/doctrine/PluginMailQueueForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="8b17c74275c32fb47b3753f07ee14635" name="lib/model/doctrine/PluginMailQueue.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="1173fc2e449dbe3f1a6f06d55e43818d" name="lib/model/doctrine/PluginMailQueueTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="8c3108d16edc1f234fa20639bbe736f8" name="lib/task/opMailqExecuteTask.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="97450f6d2493b6aad95f9d08dd373f12" name="README" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.3</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.9.0</release>
+    <api>0.9.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-07-26</date>
+   <license>PHP</license>
+   <notes>beta version</notes>
+  </release>
+ </changelog>
+</package>
