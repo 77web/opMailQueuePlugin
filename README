@@ -1,0 +1,11 @@
+here is some cron setting examples.
+
+will execute queues hourly:
+0 * * * * /path/to/openpne/symfony opMailq:execute
+
+will execute queues every 30 minutes:
+0 * * * * /path/to/openpne/symfony opMailq:execute
+30 * * * * /path/to/openpne/symfony opMailq:execute
+
+will execute queues every minutes(!!not recommended!!):
+* * * * * /path/to/openpne/symfony opMailq:execute
